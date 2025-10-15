@@ -31,9 +31,6 @@ warnings.filterwarnings("ignore", category=FutureWarning, module="plotly")
 import logging
 logging.getLogger('plotly').setLevel(logging.ERROR)
 
-# Suppress Streamlit warnings
-st.set_option('deprecation.showPyplotGlobalUse', False)
-
 # Add src directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
