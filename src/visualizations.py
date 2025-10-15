@@ -74,12 +74,8 @@ class MedicaidVisualizations:
             xaxis_title='Month',
             yaxis_title='Cost ($)',
             hovermode='x unified',
-            template='plotly_white',
-            height=500
+            template='plotly_white'
         )
-        
-        # Update legend configuration
-        fig.update_layout(showlegend=True)
         
         return fig
     
@@ -116,9 +112,7 @@ class MedicaidVisualizations:
                 'xanchor': 'center',
                 'font': {'size': 20}
             },
-            template='plotly_white',
-            height=500,
-            showlegend=True
+            template='plotly_white'
         )
         
         return fig
@@ -166,8 +160,6 @@ class MedicaidVisualizations:
             xaxis_title='Cost per Member ($)',
             yaxis_title='Quality Score',
             template='plotly_white',
-            height=600,
-            showlegend=False
         )
         
         return fig
@@ -208,7 +200,6 @@ class MedicaidVisualizations:
                 lakecolor='rgb(255, 255, 255)'
             ),
             template='plotly_white',
-            height=500
         )
         
         return fig
@@ -273,7 +264,6 @@ class MedicaidVisualizations:
                 'font': {'size': 20}
             },
             template='plotly_white',
-            height=600
         )
         
         return fig
@@ -319,7 +309,6 @@ class MedicaidVisualizations:
             xaxis_title='Total Allowed Amount ($)',
             yaxis_title='Member ID',
             template='plotly_white',
-            height=500
         )
         
         return fig
@@ -346,7 +335,6 @@ class MedicaidVisualizations:
             fig.update_layout(
                 title="Fraud Detection Results",
                 template='plotly_white',
-                height=400
             )
             return fig
         
@@ -380,7 +368,6 @@ class MedicaidVisualizations:
             xaxis_title='Allowed Amount ($)',
             yaxis_title='Anomaly Score',
             template='plotly_white',
-            height=500
         )
         
         return fig
@@ -415,7 +402,6 @@ class MedicaidVisualizations:
             y=forecast_df['upper_bound'],
             mode='lines',
             line=dict(width=0),
-            showlegend=False,
             hoverinfo='skip'
         ))
         
@@ -440,8 +426,6 @@ class MedicaidVisualizations:
             xaxis_title='Month Index',
             yaxis_title='Forecasted Amount ($)',
             template='plotly_white',
-            height=500,
-            showlegend=True
         )
         
         return fig
@@ -523,9 +507,7 @@ class MedicaidVisualizations:
             },
             xaxis_title='Intervention Type',
             yaxis_title='ROI (%)',
-            template='plotly_white',
-            height=500,
-            showlegend=False
+            template='plotly_white'
         )
         
         return fig
