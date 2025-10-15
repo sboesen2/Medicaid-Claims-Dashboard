@@ -11,6 +11,10 @@ from plotly.subplots import make_subplots
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Optional
+import warnings
+
+# Suppress Plotly deprecation warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="plotly")
 
 class MedicaidVisualizations:
     """

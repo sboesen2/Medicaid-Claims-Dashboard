@@ -20,6 +20,10 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import sys
 import os
+import warnings
+
+# Suppress Plotly deprecation warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="plotly")
 
 # Add src directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
