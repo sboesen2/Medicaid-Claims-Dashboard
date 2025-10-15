@@ -24,6 +24,15 @@ import warnings
 
 # Suppress Plotly deprecation warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="plotly")
+warnings.filterwarnings("ignore", category=DeprecationWarning, module="plotly")
+warnings.filterwarnings("ignore", category=FutureWarning, module="plotly")
+
+# Suppress all warnings from plotly
+import logging
+logging.getLogger('plotly').setLevel(logging.ERROR)
+
+# Suppress Streamlit warnings
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Add src directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -65,6 +74,26 @@ st.markdown("""
         margin: 2rem 0 1rem 0;
         border-bottom: 2px solid #1f77b4;
         padding-bottom: 0.5rem;
+    }
+    
+    /* Hide Plotly deprecation warnings */
+    .stAlert {
+        display: none !important;
+    }
+    
+    /* Hide any warning elements */
+    [data-testid="stAlert"] {
+        display: none !important;
+    }
+    
+    /* Hide yellow warning boxes */
+    .alert-warning {
+        display: none !important;
+    }
+    
+    /* Hide any element containing deprecation warning text */
+    div:has-text("deprecated") {
+        display: none !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -112,7 +141,7 @@ def show_overview_tab(processor, analytics, viz):
     # Cost trend chart
     st.markdown('<h3 class="section-header">📈 Cost Trends</h3>', unsafe_allow_html=True)
     cost_trend_chart = viz.create_cost_trend_chart(pmpm_metrics['monthly_data'])
-    st.plotly_chart(cost_trend_chart, width='stretch', key="overview_cost_trend", config={"displayModeBar": True, "displaylogo": False})
+    st.plotly_chart(cost_trend_chart, width='stretch', key="overview_cost_trend", config={"displayModeBar": True, "displaylogo": False, "modeBarButtonsToRemove": [], "displayModeBar": True})
     
     # Service category breakdown
     col1, col2 = st.columns(2)
