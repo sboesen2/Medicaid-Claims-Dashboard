@@ -1,0 +1,57 @@
+[
+  {
+    "claim_id": "CLM201",
+    "member_id": "MEM201",
+    "provider_id": "PROV201",
+    "service_date": "2024-01-05",
+    "allowed_amount": 275.50,
+    "paid_amount": 220.40,
+    "member_age": 45,
+    "member_gender": "M",
+    "service_type": "Outpatient"
+  },
+  {
+    "claim_id": "CLM202",
+    "member_id": "MEM202",
+    "provider_id": "PROV202",
+    "service_date": "2024-01-08",
+    "allowed_amount": 150.00,
+    "paid_amount": 120.00,
+    "member_age": 32,
+    "member_gender": "F",
+    "service_type": "Preventive"
+  },
+  {
+    "claim_id": "CLM203",
+    "member_id": "MEM203",
+    "provider_id": "PROV203",
+    "service_date": "2024-01-12",
+    "allowed_amount": 500.00,
+    "paid_amount": 400.00,
+    "member_age": 58,
+    "member_gender": "M",
+    "service_type": "Emergency"
+  },
+  {
+    "claim_id": "CLM204",
+    "member_id": "MEM204",
+    "provider_id": "PROV204",
+    "service_date": "2024-01-15",
+    "allowed_amount": 800.00,
+    "paid_amount": 640.00,
+    "member_age": 41,
+    "member_gender": "F",
+    "service_type": "Inpatient"
+  },
+  {
+    "claim_id": "CLM205",
+    "member_id": "MEM205",
+    "provider_id": "PROV205",
+    "service_date": "2024-01-18",
+    "allowed_amount": 125.75,
+    "paid_amount": 100.60,
+    "member_age": 29,
+    "member_gender": "F",
+    "service_type": "Outpatient"
+  }
+]

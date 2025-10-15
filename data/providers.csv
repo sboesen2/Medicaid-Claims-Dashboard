@@ -1,0 +1,26 @@
+provider_id,provider_name,provider_type,address,city,state,zip_code,county,specialty,network_status,quality_score,patient_volume,avg_cost_per_visit
+PROV001,Valley Medical Center,Primary Care,123 Main St,Phoenix,AZ,85001,Maricopa,Internal Medicine,In-Network,4.2,1250,165.50
+PROV002,Desert Emergency Care,Emergency,456 Oak Ave,Phoenix,AZ,85002,Maricopa,Emergency Medicine,In-Network,3.8,890,425.75
+PROV003,CardioCare Associates,Specialist,789 Pine St,Phoenix,AZ,85003,Maricopa,Cardiology,In-Network,4.5,680,2750.25
+PROV004,Family Health Clinic,Primary Care,321 Elm St,Phoenix,AZ,85004,Maricopa,Family Medicine,In-Network,4.1,980,185.30
+PROV005,Preventive Care Plus,Primary Care,654 Maple Ave,Phoenix,AZ,85005,Maricopa,Preventive Medicine,In-Network,4.3,750,125.80
+PROV006,Heart Specialists,Specialist,987 Cedar Blvd,Phoenix,AZ,85006,Maricopa,Cardiology,In-Network,4.4,420,3200.50
+PROV007,Wellness Center,Primary Care,147 Birch St,Phoenix,AZ,85007,Maricopa,Preventive Medicine,In-Network,4.0,820,118.90
+PROV008,Advanced Cardiology,Specialist,258 Spruce Ave,Phoenix,AZ,85008,Maricopa,Cardiology,In-Network,4.6,350,3450.75
+PROV009,Community Health,Primary Care,369 Willow St,Phoenix,AZ,85009,Maricopa,Family Medicine,In-Network,3.9,1100,195.40
+PROV010,Urgent Care Express,Urgent Care,741 Poplar Ave,Phoenix,AZ,85010,Maricopa,Urgent Care,In-Network,3.7,650,185.60
+PROV011,Metro Family Practice,Primary Care,852 Ash St,Phoenix,AZ,85011,Maricopa,Family Medicine,In-Network,4.2,920,175.25
+PROV012,City Emergency,Emergency,963 Pine Ave,Phoenix,AZ,85012,Maricopa,Emergency Medicine,In-Network,3.9,720,445.30
+PROV013,Heart & Vascular,Specialist,159 Oak St,Phoenix,AZ,85013,Maricopa,Cardiology,In-Network,4.3,380,2800.90
+PROV014,Primary Care Partners,Primary Care,357 Elm Ave,Phoenix,AZ,85014,Maricopa,Internal Medicine,In-Network,4.0,1050,190.15
+PROV015,Preventive Health,Primary Care,468 Maple St,Phoenix,AZ,85015,Maricopa,Preventive Medicine,In-Network,4.4,680,135.70
+PROV016,Valley Emergency,Emergency,579 Cedar Ave,Phoenix,AZ,85016,Maricopa,Emergency Medicine,In-Network,4.1,580,420.85
+PROV017,Family Wellness,Primary Care,680 Birch St,Phoenix,AZ,85017,Maricopa,Family Medicine,In-Network,3.8,890,170.45
+PROV018,Cardiac Care Center,Specialist,791 Spruce Ave,Phoenix,AZ,85018,Maricopa,Cardiology,In-Network,4.7,320,3550.20
+PROV019,Community Clinic,Primary Care,802 Willow St,Phoenix,AZ,85019,Maricopa,Internal Medicine,In-Network,3.9,1150,205.60
+PROV020,Health First,Primary Care,913 Poplar Ave,Phoenix,AZ,85020,Maricopa,Preventive Medicine,In-Network,4.1,750,142.30
+PROV021,Metro Medical,Primary Care,124 Ash St,Phoenix,AZ,85021,Maricopa,Family Medicine,In-Network,4.0,980,160.75
+PROV022,Desert Emergency,Emergency,235 Pine Ave,Phoenix,AZ,85022,Maricopa,Emergency Medicine,In-Network,3.8,640,460.40
+PROV023,Heart Institute,Specialist,346 Oak St,Phoenix,AZ,85023,Maricopa,Cardiology,In-Network,4.5,410,2650.15
+PROV024,Valley Family Care,Primary Care,457 Elm Ave,Phoenix,AZ,85024,Maricopa,Family Medicine,In-Network,3.9,1080,185.90
+PROV025,Wellness Plus,Primary Care,568 Maple St,Phoenix,AZ,85025,Maricopa,Preventive Medicine,In-Network,4.2,720,128.50

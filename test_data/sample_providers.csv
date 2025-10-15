@@ -1,0 +1,6 @@
+provider_id,provider_name,provider_type,address,city,state,zip_code,county,specialty,network_status,quality_score,patient_volume,avg_cost_per_visit
+DR001,Dr. Smith,Primary Care,123 Main St,Phoenix,AZ,85001,Maricopa,Internal Medicine,In-Network,84,1250,165.50
+DR002,Dr. Johnson,Emergency,456 Oak Ave,Phoenix,AZ,85002,Maricopa,Emergency Medicine,In-Network,76,890,425.75
+DR003,Dr. Williams,Specialist,789 Pine St,Phoenix,AZ,85003,Maricopa,Cardiology,In-Network,90,680,2750.25
+DR004,Dr. Brown,Primary Care,321 Elm St,Phoenix,AZ,85004,Maricopa,Family Medicine,In-Network,82,980,185.30
+DR005,Dr. Davis,Primary Care,654 Maple Ave,Phoenix,AZ,85005,Maricopa,Preventive Medicine,In-Network,86,750,125.80

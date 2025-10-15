@@ -1,0 +1,11 @@
+provider_id,provider_name,specialty,location,quality_rating
+PROV001,Dr. Smith,Cardiology,Phoenix,4.5
+PROV002,Dr. Johnson,Emergency Medicine,Tucson,4.2
+PROV003,Dr. Williams,Internal Medicine,Mesa,4.7
+PROV004,Dr. Brown,Cardiology,Chandler,4.1
+PROV005,Dr. Davis,Family Medicine,Scottsdale,4.8
+PROV006,Dr. Miller,Emergency Medicine,Phoenix,4.3
+PROV007,Dr. Wilson,Internal Medicine,Tucson,4.6
+PROV008,Dr. Moore,Cardiology,Mesa,4.4
+PROV009,Dr. Taylor,Family Medicine,Chandler,4.9
+PROV010,Dr. Anderson,Emergency Medicine,Scottsdale,4.0

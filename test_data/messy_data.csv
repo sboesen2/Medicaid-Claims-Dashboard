@@ -1,0 +1,11 @@
+ID,Patient,Provider,Date,Amount,Age,Sex,Type,Notes
+CLM101,PAT101,PROV101,2024-01-10,250.00,42,Female,Outpatient,Regular checkup
+CLM102,PAT102,PROV102,2024-01-12,180.50,35,Male,Emergency,Accident
+CLM103,PAT103,PROV101,2024-01-15,95.00,28,Female,Preventive,Annual exam
+CLM104,PAT104,PROV103,2024-01-18,420.00,55,Male,Inpatient,Surgery
+CLM105,PAT105,PROV102,2024-01-20,160.75,31,Female,Outpatient,Follow-up
+CLM106,PAT106,PROV104,2024-01-22,380.00,47,Male,Emergency,Heart attack
+CLM107,PAT107,PROV101,2024-01-25,110.00,29,Female,Preventive,Vaccination
+CLM108,PAT108,PROV103,2024-01-28,350.00,52,Male,Inpatient,Recovery
+CLM109,PAT109,PROV102,2024-01-30,200.00,38,Female,Outpatient,Consultation
+CLM110,PAT110,PROV104,2024-02-02,450.00,44,Male,Emergency,Stroke
