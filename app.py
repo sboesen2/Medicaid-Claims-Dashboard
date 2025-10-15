@@ -108,7 +108,7 @@ def show_overview_tab(processor, analytics, viz):
     # Cost trend chart
     st.markdown('<h3 class="section-header">📈 Cost Trends</h3>', unsafe_allow_html=True)
     cost_trend_chart = viz.create_cost_trend_chart(pmpm_metrics['monthly_data'])
-    st.plotly_chart(cost_trend_chart, use_container_width=True, key="overview_cost_trend")
+    st.plotly_chart(cost_trend_chart, width='stretch', key="overview_cost_trend")
     
     # Service category breakdown
     col1, col2 = st.columns(2)
@@ -117,12 +117,12 @@ def show_overview_tab(processor, analytics, viz):
         st.markdown('<h3 class="section-header">🏥 Service Categories</h3>', unsafe_allow_html=True)
         service_analysis = processor.analyze_service_categories()
         service_chart = viz.create_service_category_chart(service_analysis)
-        st.plotly_chart(service_chart, use_container_width=True, key="overview_service_categories")
+        st.plotly_chart(service_chart, width='stretch', key="overview_service_categories")
     
     with col2:
         st.markdown('<h3 class="section-header">📊 Quality Metrics</h3>', unsafe_allow_html=True)
         quality_chart = viz.create_quality_metrics_dashboard(quality_metrics)
-        st.plotly_chart(quality_chart, use_container_width=True, key="overview_quality_metrics")
+        st.plotly_chart(quality_chart, width='stretch', key="overview_quality_metrics")
 
 def show_cost_analysis_tab(processor, analytics, viz):
     """Display cost analysis tab content."""
@@ -137,13 +137,13 @@ def show_cost_analysis_tab(processor, analytics, viz):
     with col1:
         st.markdown('<h3 class="section-header">📈 PMPM Trends</h3>', unsafe_allow_html=True)
         cost_trend_chart = viz.create_cost_trend_chart(pmpm_metrics['monthly_data'])
-        st.plotly_chart(cost_trend_chart, use_container_width=True, key="cost_pmpm_trends")
+        st.plotly_chart(cost_trend_chart, width='stretch', key="cost_pmpm_trends")
     
     with col2:
         st.markdown('<h3 class="section-header">📊 Service Category Spending</h3>', unsafe_allow_html=True)
         service_analysis = processor.analyze_service_categories()
         service_chart = viz.create_service_category_chart(service_analysis)
-        st.plotly_chart(service_chart, use_container_width=True, key="cost_service_categories")
+        st.plotly_chart(service_chart, width='stretch', key="cost_service_categories")
     
     # High-cost members analysis
     st.markdown('<h3 class="section-header">👥 High-Cost Members Analysis</h3>', unsafe_allow_html=True)
@@ -151,7 +151,7 @@ def show_cost_analysis_tab(processor, analytics, viz):
     
     if not high_cost_members.empty:
         high_cost_chart = viz.create_high_cost_members_chart(high_cost_members)
-        st.plotly_chart(high_cost_chart, use_container_width=True, key="cost_high_cost_members")
+        st.plotly_chart(high_cost_chart, width='stretch', key="cost_high_cost_members")
         
         # High-cost members table
         st.markdown('<h4>High-Cost Members Details</h4>', unsafe_allow_html=True)
@@ -159,7 +159,7 @@ def show_cost_analysis_tab(processor, analytics, viz):
                           'emergency_visits', 'readmissions', 'cost_per_day']
         st.dataframe(
             high_cost_members[display_columns].head(10),
-            use_container_width=True
+            width='stretch'
         )
     
     # Budget forecasting
@@ -169,7 +169,7 @@ def show_cost_analysis_tab(processor, analytics, viz):
         with st.spinner("Generating forecast..."):
             forecast_data = analytics.forecast_budget_requirements()
             forecast_chart = viz.create_budget_forecast_chart(forecast_data)
-            st.plotly_chart(forecast_chart, use_container_width=True, key="cost_budget_forecast")
+            st.plotly_chart(forecast_chart, width='stretch', key="cost_budget_forecast")
             
             # Forecast summary
             col1, col2, col3 = st.columns(3)
@@ -191,7 +191,7 @@ def show_provider_performance_tab(processor, analytics, viz):
     # Provider performance chart
     st.markdown('<h3 class="section-header">📊 Provider Performance Matrix</h3>', unsafe_allow_html=True)
     provider_chart = viz.create_provider_performance_chart(provider_performance)
-    st.plotly_chart(provider_chart, use_container_width=True, key="provider_performance_matrix")
+    st.plotly_chart(provider_chart, width='stretch', key="provider_performance_matrix")
     
     # Provider performance table
     st.markdown('<h3 class="section-header">📋 Provider Performance Details</h3>', unsafe_allow_html=True)
@@ -199,7 +199,7 @@ def show_provider_performance_tab(processor, analytics, viz):
                       'total_allowed', 'unique_members', 'cost_per_member', 'quality_score']
     st.dataframe(
         provider_performance[display_columns].head(15),
-        use_container_width=True
+        width='stretch'
     )
     
     # Network optimization
@@ -216,14 +216,14 @@ def show_provider_performance_tab(processor, analytics, viz):
                 top_performers = network_analysis['top_performers'][
                     ['provider_name', 'efficiency_score', 'cost_per_member', 'quality_score']
                 ]
-                st.dataframe(top_performers, use_container_width=True)
+                st.dataframe(top_performers, width='stretch')
             
             with col2:
                 st.markdown('<h4>Areas for Improvement</h4>', unsafe_allow_html=True)
                 bottom_performers = network_analysis['bottom_performers'][
                     ['provider_name', 'efficiency_score', 'cost_per_member', 'quality_score']
                 ]
-                st.dataframe(bottom_performers, use_container_width=True)
+                st.dataframe(bottom_performers, width='stretch')
 
 def show_roi_analysis_tab(processor, analytics, viz):
     """Display ROI Analysis tab content."""
@@ -246,7 +246,7 @@ def show_roi_analysis_tab(processor, analytics, viz):
         with st.spinner("Calculating ROI for different interventions..."):
             roi_data = analytics.calculate_roi_analysis()
             roi_chart = viz.create_roi_analysis_chart(roi_data)
-            st.plotly_chart(roi_chart, use_container_width=True, key="population_roi_analysis")
+            st.plotly_chart(roi_chart, width='stretch', key="population_roi_analysis")
             
             # ROI details
             if 'preventive_care_roi' in roi_data:
@@ -309,7 +309,7 @@ def show_fraud_detection_tab(processor, analytics, viz):
         with st.spinner("Analyzing claims for potential fraud and anomalies..."):
             fraud_results = analytics.detect_fraud_patterns()
             fraud_chart = viz.create_fraud_detection_chart(fraud_results['anomaly_claims'])
-            st.plotly_chart(fraud_chart, use_container_width=True, key="fraud_detection_analysis")
+            st.plotly_chart(fraud_chart, width='stretch', key="fraud_detection_analysis")
             
             # Fraud detection summary
             col1, col2, col3 = st.columns(3)
@@ -326,7 +326,7 @@ def show_fraud_detection_tab(processor, analytics, viz):
                 st.markdown('<h4>Anomaly Patterns by Provider and Service Type</h4>', unsafe_allow_html=True)
                 st.dataframe(
                     fraud_results['anomaly_patterns'].head(10),
-                    use_container_width=True
+                    width='stretch'
                 )
     
     # Manual anomaly detection
@@ -344,7 +344,7 @@ def show_fraud_detection_tab(processor, analytics, viz):
         }).round(2)
         
         anomaly_summary.columns = ['Count', 'Total Allowed', 'Total Paid']
-        st.dataframe(anomaly_summary, use_container_width=True)
+        st.dataframe(anomaly_summary, width='stretch')
         
         # Detailed anomalies table
         st.markdown('<h4>Detailed Anomaly Records</h4>', unsafe_allow_html=True)
@@ -352,7 +352,7 @@ def show_fraud_detection_tab(processor, analytics, viz):
                           'allowed_amount', 'paid_amount', 'anomaly_type']
         st.dataframe(
             anomalies[display_columns].head(20),
-            use_container_width=True
+            width='stretch'
         )
     else:
         st.info("No anomalies detected in the current dataset.")
@@ -448,7 +448,7 @@ def show_data_generation_tab(processor, analytics, viz):
     # Generate data button
     st.markdown('<h3 class="section-header">🚀 Generate Dataset</h3>', unsafe_allow_html=True)
     
-    if st.button("Generate Synthetic Data", type="primary", use_container_width=True):
+    if st.button("Generate Synthetic Data", type="primary", width='stretch'):
         with st.spinner("Generating synthetic Medicaid claims data..."):
             try:
                 # Enforce the 5000 claim limit
@@ -498,7 +498,7 @@ def show_data_generation_tab(processor, analytics, viz):
         
         # Show data preview
         st.markdown('<h4>Generated Claims Preview</h4>', unsafe_allow_html=True)
-        st.dataframe(claims_df.head(10), use_container_width=True)
+        st.dataframe(claims_df.head(10), width='stretch')
         
         # Export options
         st.markdown('<h3 class="section-header">📤 Export Options</h3>', unsafe_allow_html=True)
@@ -512,7 +512,7 @@ def show_data_generation_tab(processor, analytics, viz):
                 data=csv_claims,
                 file_name=f"medicaid_claims_{st.session_state.generation_scenario}_{st.session_state.generation_num_claims}_{datetime.now().strftime('%Y%m%d')}.csv",
                 mime="text/csv",
-                use_container_width=True
+                width='stretch'
             )
         
         with col2:
@@ -522,12 +522,12 @@ def show_data_generation_tab(processor, analytics, viz):
                 data=csv_providers,
                 file_name=f"medicaid_providers_{datetime.now().strftime('%Y%m%d')}.csv",
                 mime="text/csv",
-                use_container_width=True
+                width='stretch'
             )
         
         # Load into dashboard option
         st.markdown('<h3 class="section-header">🔄 Load into Dashboard</h3>', unsafe_allow_html=True)
-        if st.button("Load Generated Data into Dashboard", type="secondary", use_container_width=True):
+        if st.button("Load Generated Data into Dashboard", type="secondary", width='stretch'):
             # Ensure dates are properly formatted before storing
             claims_df_copy = claims_df.copy()
             if 'service_date' in claims_df_copy.columns:
@@ -610,7 +610,7 @@ def show_real_data_analysis_tab(processor, analytics, viz):
             'service_type': ['Outpatient', 'Emergency', 'Preventive']
         }
         example_df = pd.DataFrame(example_data)
-        st.dataframe(example_df, use_container_width=True)
+        st.dataframe(example_df, width='stretch')
         
         st.warning("""
         **⚠️ HIPAA COMPLIANCE NOTICE** ⚠️
@@ -804,7 +804,7 @@ def show_real_data_analysis_tab(processor, analytics, viz):
                     
                     # Show preview
                     st.markdown('<h4>Processed Data Preview</h4>', unsafe_allow_html=True)
-                    st.dataframe(processed_df.head(), use_container_width=True)
+                    st.dataframe(processed_df.head(), width='stretch')
                     
                     # Show analysis limitations
                     missing_optional = [col for col in ['paid_amount', 'member_age', 'member_gender', 'service_type'] if col not in processed_df.columns]
@@ -840,10 +840,10 @@ def show_real_data_analysis_tab(processor, analytics, viz):
         
         # Data preview
         st.markdown('<h4>Data Preview</h4>', unsafe_allow_html=True)
-        st.dataframe(claims_df.head(), use_container_width=True)
+        st.dataframe(claims_df.head(), width='stretch')
         
         # Load into processor
-        if st.button("Load Real Data into Dashboard", type="primary", use_container_width=True):
+        if st.button("Load Real Data into Dashboard", type="primary", width='stretch'):
             # Ensure dates are properly formatted before storing
             claims_df_copy = claims_df.copy()
             if 'service_date' in claims_df_copy.columns:
@@ -1761,7 +1761,7 @@ if __name__ == "__main__":
                 st.markdown("---")
                 
                 # Apply transformations
-                if st.button("🚀 Apply Transformations", type="primary", use_container_width=True):
+                if st.button("🚀 Apply Transformations", type="primary", width='stretch'):
                     with st.spinner("Applying transformations..."):
                         # Ensure pandas and numpy are available in this scope
                         import pandas as pd
@@ -1837,7 +1837,7 @@ if __name__ == "__main__":
             
             st.markdown("---")
             
-            if st.button("🚀 Execute Load", type="primary", use_container_width=True):
+            if st.button("🚀 Execute Load", type="primary", width='stretch'):
                 with st.spinner("Loading data..."):
                     # Ensure pandas and numpy are available in this scope
                     import pandas as pd
@@ -2062,7 +2062,7 @@ if __name__ == "__main__":
         st.markdown('<h4>Processed Data Preview</h4>', unsafe_allow_html=True)
         for file_data in st.session_state.etl_pipeline_data[:2]:  # Show first 2 files
             st.markdown(f"**{file_data['filename']}** ({file_data['rows']} rows, {file_data['columns']} columns)")
-            st.dataframe(file_data['data'].head(3), use_container_width=True)
+            st.dataframe(file_data['data'].head(3), width='stretch')
 
 def main():
     """Main application function."""
@@ -2151,7 +2151,7 @@ def main():
     # Data source controls
     if 'active_claims' in st.session_state and st.session_state.active_claims is not None:
         st.sidebar.subheader("🔄 Data Source")
-        if st.sidebar.button("Reset to Default Data", use_container_width=True):
+        if st.sidebar.button("Reset to Default Data", width='stretch'):
             # Clear session state
             if 'active_claims' in st.session_state:
                 del st.session_state.active_claims
