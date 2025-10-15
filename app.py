@@ -108,7 +108,7 @@ def show_overview_tab(processor, analytics, viz):
     # Cost trend chart
     st.markdown('<h3 class="section-header">📈 Cost Trends</h3>', unsafe_allow_html=True)
     cost_trend_chart = viz.create_cost_trend_chart(pmpm_metrics['monthly_data'])
-    st.plotly_chart(cost_trend_chart, width='stretch', key="overview_cost_trend")
+    st.plotly_chart(cost_trend_chart, width='stretch', key="overview_cost_trend", config={"displayModeBar": True, "displaylogo": False})
     
     # Service category breakdown
     col1, col2 = st.columns(2)
@@ -117,12 +117,12 @@ def show_overview_tab(processor, analytics, viz):
         st.markdown('<h3 class="section-header">🏥 Service Categories</h3>', unsafe_allow_html=True)
         service_analysis = processor.analyze_service_categories()
         service_chart = viz.create_service_category_chart(service_analysis)
-        st.plotly_chart(service_chart, width='stretch', key="overview_service_categories")
+        st.plotly_chart(service_chart, width='stretch', key="overview_service_categories", config={"displayModeBar": True, "displaylogo": False})
     
     with col2:
         st.markdown('<h3 class="section-header">📊 Quality Metrics</h3>', unsafe_allow_html=True)
         quality_chart = viz.create_quality_metrics_dashboard(quality_metrics)
-        st.plotly_chart(quality_chart, width='stretch', key="overview_quality_metrics")
+        st.plotly_chart(quality_chart, width='stretch', key="overview_quality_metrics", config={"displayModeBar": True, "displaylogo": False})
 
 def show_cost_analysis_tab(processor, analytics, viz):
     """Display cost analysis tab content."""
@@ -137,13 +137,13 @@ def show_cost_analysis_tab(processor, analytics, viz):
     with col1:
         st.markdown('<h3 class="section-header">📈 PMPM Trends</h3>', unsafe_allow_html=True)
         cost_trend_chart = viz.create_cost_trend_chart(pmpm_metrics['monthly_data'])
-        st.plotly_chart(cost_trend_chart, width='stretch', key="cost_pmpm_trends")
+        st.plotly_chart(cost_trend_chart, width='stretch', key="cost_pmpm_trends", config={"displayModeBar": True, "displaylogo": False})
     
     with col2:
         st.markdown('<h3 class="section-header">📊 Service Category Spending</h3>', unsafe_allow_html=True)
         service_analysis = processor.analyze_service_categories()
         service_chart = viz.create_service_category_chart(service_analysis)
-        st.plotly_chart(service_chart, width='stretch', key="cost_service_categories")
+        st.plotly_chart(service_chart, width='stretch', key="cost_service_categories", config={"displayModeBar": True, "displaylogo": False})
     
     # High-cost members analysis
     st.markdown('<h3 class="section-header">👥 High-Cost Members Analysis</h3>', unsafe_allow_html=True)
@@ -151,7 +151,7 @@ def show_cost_analysis_tab(processor, analytics, viz):
     
     if not high_cost_members.empty:
         high_cost_chart = viz.create_high_cost_members_chart(high_cost_members)
-        st.plotly_chart(high_cost_chart, width='stretch', key="cost_high_cost_members")
+        st.plotly_chart(high_cost_chart, width='stretch', key="cost_high_cost_members", config={"displayModeBar": True, "displaylogo": False})
         
         # High-cost members table
         st.markdown('<h4>High-Cost Members Details</h4>', unsafe_allow_html=True)
@@ -169,7 +169,7 @@ def show_cost_analysis_tab(processor, analytics, viz):
         with st.spinner("Generating forecast..."):
             forecast_data = analytics.forecast_budget_requirements()
             forecast_chart = viz.create_budget_forecast_chart(forecast_data)
-            st.plotly_chart(forecast_chart, width='stretch', key="cost_budget_forecast")
+            st.plotly_chart(forecast_chart, width='stretch', key="cost_budget_forecast", config={"displayModeBar": True, "displaylogo": False})
             
             # Forecast summary
             col1, col2, col3 = st.columns(3)
@@ -191,7 +191,7 @@ def show_provider_performance_tab(processor, analytics, viz):
     # Provider performance chart
     st.markdown('<h3 class="section-header">📊 Provider Performance Matrix</h3>', unsafe_allow_html=True)
     provider_chart = viz.create_provider_performance_chart(provider_performance)
-    st.plotly_chart(provider_chart, width='stretch', key="provider_performance_matrix")
+    st.plotly_chart(provider_chart, width='stretch', key="provider_performance_matrix", config={"displayModeBar": True, "displaylogo": False})
     
     # Provider performance table
     st.markdown('<h3 class="section-header">📋 Provider Performance Details</h3>', unsafe_allow_html=True)
@@ -246,7 +246,7 @@ def show_roi_analysis_tab(processor, analytics, viz):
         with st.spinner("Calculating ROI for different interventions..."):
             roi_data = analytics.calculate_roi_analysis()
             roi_chart = viz.create_roi_analysis_chart(roi_data)
-            st.plotly_chart(roi_chart, width='stretch', key="population_roi_analysis")
+            st.plotly_chart(roi_chart, width='stretch', key="population_roi_analysis", config={"displayModeBar": True, "displaylogo": False})
             
             # ROI details
             if 'preventive_care_roi' in roi_data:
@@ -309,7 +309,7 @@ def show_fraud_detection_tab(processor, analytics, viz):
         with st.spinner("Analyzing claims for potential fraud and anomalies..."):
             fraud_results = analytics.detect_fraud_patterns()
             fraud_chart = viz.create_fraud_detection_chart(fraud_results['anomaly_claims'])
-            st.plotly_chart(fraud_chart, width='stretch', key="fraud_detection_analysis")
+            st.plotly_chart(fraud_chart, width='stretch', key="fraud_detection_analysis", config={"displayModeBar": True, "displaylogo": False})
             
             # Fraud detection summary
             col1, col2, col3 = st.columns(3)

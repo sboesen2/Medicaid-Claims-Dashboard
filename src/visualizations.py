@@ -75,9 +75,11 @@ class MedicaidVisualizations:
             yaxis_title='Cost ($)',
             hovermode='x unified',
             template='plotly_white',
-            height=500,
-            showlegend=True
+            height=500
         )
+        
+        # Update legend configuration
+        fig.update_layout(showlegend=True)
         
         return fig
     
